@@ -1,39 +1,39 @@
--- create database PortfolioProject
+create database PortfolioProject
 
--- use portfolioprojectcoviddeaths
--- select * from coviddeaths order by 3,4
--- select * from covidVaccination order by 3,4
+use portfolioprojectcoviddeaths
+select * from coviddeaths order by 3,4
+select * from covidVaccination order by 3,4
 
 select * from coviddeaths where continent is not null order by 3,4
 
--- SELECT 
---     location,
---     date,
---     total_cases,
---     new_cases,
---     total_deaths,
---     population
--- FROM
---     coviddeaths
--- ORDER BY 1 , 2
+SELECT 
+    location,
+    date,
+    total_cases,
+    new_cases,
+    total_deaths,
+    population
+FROM
+    coviddeaths
+ORDER BY 1 , 2
     
 -- Looking at Total Cases vs Total Deaths 
   
--- SELECT location, date, total_cases, total_deaths, (total_deaths / total_cases)*100 as DeathPercentage
--- FROM coviddeaths where location like '%india%' ORDER BY 1 , 2
+SELECT location, date, total_cases, total_deaths, (total_deaths / total_cases)*100 as DeathPercentage
+FROM coviddeaths where location like '%india%' ORDER BY 1 , 2
     
 -- Looking at Total Cases vs Population    
 -- Shows what percentage of population got covid  
   
--- SELECT location, date, total_cases, Population, (total_cases/population)*100 as DeathPercentage
--- FROM coviddeaths -- where location like '%india%' ORDER BY 1 , 2    
+SELECT location, date, total_cases, Population, (total_cases/population)*100 as DeathPercentage
+FROM coviddeaths -- where location like '%india%' ORDER BY 1 , 2    
     
 -- Looking at countries with highest rate compared to population
    
--- SELECT location, Population, max(total_cases) as HighestInfectionCount,  max((total_cases/population))*100 as PercenofpopulationInfected
--- FROM coviddeaths 
--- -- where location like '%india%'
--- group by location, population ORDER BY PercenofpopulationInfected desc      
+SELECT location, Population, max(total_cases) as HighestInfectionCount,  max((total_cases/population))*100 as PercenofpopulationInfected
+FROM coviddeaths 
+-- where location like '%india%'
+group by location, population ORDER BY PercenofpopulationInfected desc      
     
 -- Showing countries with highest Death Count per Population
 
